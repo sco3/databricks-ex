@@ -1,0 +1,6 @@
+{
+  "warehouse_id": "13d427578c835b2b",
+  "catalog": "dz",
+  "schema": "dz",
+  "statement": "select * from data"
+}
