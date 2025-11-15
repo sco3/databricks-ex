@@ -2,36 +2,26 @@
 
 This project demonstrates a simple data ingestion workflow for Databricks.
 
-## Setup
+## Getting Started
 
-1.  **Environment Variables:**
-
-    This project uses a `.env` file to manage Databricks connection details. Create a `.env` file in the root of the project by copying the template:
-
+1.  **Configure Environment:**
+    Copy the environment template and fill in your Databricks connection details:
     ```bash
     cp .databricks.env.template .env
     ```
 
-    Then, edit the `.env` file and provide your Databricks host, token, and target warehouse name.
-
-    *   `.databricks.env.template`: This is a template file for the environment variables. **Do not store credentials in this file.**
-    *   `.env`: This file is used to store your Databricks credentials and is ignored by git.
-
-2.  **Run the Ingestion Scripts:**
-
-    The `ingestion` directory contains the scripts to create a volume and upload data.
-
-    *   `ingestion/00-create-volume.sh`: Creates a Databricks volume named `dz-vol`.
-    *   `ingestion/01-copy-local-data-to-volume.sh`: Copies the `ingestion/data.csv` file to the `dz-vol` volume.
-
-    To run the scripts:
-
+2.  **Run Ingestion:**
+    Execute the scripts in the `ingestion` directory in numerical order:
     ```bash
     cd ingestion
     ./00-create-volume.sh
     ./01-copy-local-data-to-volume.sh
+    ./02-insert.sh
     ```
 
-## Data
+## Project Structure
 
-The `ingestion/data.csv` file contains sample data that is uploaded to the Databricks volume.
+-   `.databricks.env.template`: Template for environment variables.
+-   `.gitignore`: Files and directories ignored by git.
+-   `README.md`: This file.
+-   `ingestion/`: Contains scripts and data for ingesting data into Databricks. The process involves creating a volume, copying local data to that volume, and then inserting the data into a table.
