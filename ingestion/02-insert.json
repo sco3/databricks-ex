@@ -1,6 +1,6 @@
 {
-  "warehouse_id": null,
+  "warehouse_id": "13d427578c835b2b",
   "catalog": "dz",
   "schema": "dz",
-  "statement": null
+  "statement": "create or replace table data as select * from read_files ('/Volumes/dz/dz/dz-vol/data.csv');"
 }
