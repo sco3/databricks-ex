@@ -46,3 +46,6 @@ Follow the scripts in numerical order to perform the data ingestion:
     ```
 
 Ensure you have the necessary Databricks CLI and authentication configured before running these scripts.
+
+
+** Final Result: 3 (from CTAS)+3 (from COPY INTO)=6 Records **
