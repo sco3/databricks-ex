@@ -1,0 +1,6 @@
+{
+  "warehouse_id": "13d427578c835b2b",
+  "catalog": "dz",
+  "schema": "dz",
+  "statement": "COPY INTO dz.dz.data FROM 'dbfs:/Volumes/dz/dz/dz-vol/data.csv' FILEFORMAT = CSV FORMAT_OPTIONS ('header' = 'true', 'inferSchema' = 'true') COPY_OPTIONS ('mergeSchema' = 'true')"
+}
