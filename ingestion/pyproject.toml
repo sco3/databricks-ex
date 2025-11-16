@@ -9,6 +9,8 @@ dependencies = [
     "databricks-api>=0.9.0",
     "python-dotenv>=1.2.1",
     "databricks-sdk>=0.28.0",
+    "pandas>=2.3.3",
+    "isort>=7.0.0",
 ]
 
 
