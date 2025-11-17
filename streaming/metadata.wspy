@@ -22,5 +22,12 @@ display(df)
 df_metadata = (df.withColumn("path", col("_metadata.file_path")))
 display (df_metadata)
 
+df_metadata.write.mode("overwrite").saveAsTable("dz.dz.df_metadata")
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * from dz.dz.df_metadata;
+
 # COMMAND ----------
 

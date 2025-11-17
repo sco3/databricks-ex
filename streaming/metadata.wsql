@@ -19,6 +19,14 @@ select * from dz.dz.data_streaming;
 -- MAGIC
 -- MAGIC df_metadata = (df.withColumn("path", col("_metadata.file_path")))
 -- MAGIC display (df_metadata)
+-- MAGIC
+-- MAGIC df_metadata.write.mode("overwrite").saveAsTable("dz.dz.df_metadata")
 
 -- COMMAND ----------
 
+select * from dz.dz.df_metadata;
+
+-- COMMAND ----------
+
+-- MAGIC %python
+-- MAGIC
