@@ -1,31 +1,13 @@
 {
-  "creator_user_name":"texter.texel@gmail.com",
-  "last_modified":1763386411371,
-  "latest_updates": [
-    {
-      "creation_time":"2025-11-17T13:45:34.584Z",
-      "state":"COMPLETED",
-      "update_id":"d57d606f-df30-482b-92dc-0b6196e203db"
-    },
-    {
-      "creation_time":"2025-11-17T13:36:37.966Z",
-      "state":"COMPLETED",
-      "update_id":"215bed03-1b1c-4ce8-a7be-fc7da22b90b8"
-    }
-  ],
   "name":"streaming",
-  "pipeline_id":"15ca5d57-32b9-4b26-8603-4da2ac711762",
-  "run_as_user_name":"texter.texel@gmail.com",
   "spec": {
     "catalog":"dz",
-    "channel":"CURRENT",
     "continuous":true,
     "development":true,
-    "id":"15ca5d57-32b9-4b26-8603-4da2ac711762",
     "libraries": [
       {
         "glob": {
-          "include":"/Workspace/Users/texter.texel@gmail.com/streaming/transformations/**"
+          "include":"/Workspace/Users/texter.texel@gmail.com/streaming/streaming.sql"
         }
       }
     ],
@@ -34,6 +16,5 @@
     "root_path":"/Workspace/Users/texter.texel@gmail.com/streaming",
     "schema":"dz",
     "serverless":true
-  },
-  "state":"IDLE"
+  }
 }
