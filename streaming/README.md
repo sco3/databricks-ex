@@ -87,7 +87,7 @@ Once the pipeline has successfully run, you can verify the data in the target ta
 
 First, install the dependencies:
 ```bash
-uv pip install -r requirements.txt 
+uv sync 
 ```
 
 Then run the script:
