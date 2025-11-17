@@ -17,7 +17,7 @@ df = spark \
     .format("csv") \
     .option("header", "true") \
     .option("mode", "PERMISSIVE") \
-    .option("columnNameOfCorruptRecord", "_rescued_data") \
+    .option("columnNameOfCorruptRecord", "_rescued_data") \ # "rescuedDataColumn" should work as well
     .schema(custom_schema) \
     .load("/Volumes/dz/dz/dz-vol-rescue")
 
