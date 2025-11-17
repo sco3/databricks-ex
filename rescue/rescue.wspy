@@ -55,3 +55,12 @@ df = spark \
     .csv("/Volumes/dz/dz/dz-vol-rescue")
 
 df.display()
+
+# COMMAND ----------
+
+spark.sql ('''
+           select * 
+           from text.`/Volumes/dz/dz/dz-vol-rescue`
+
+           
+''').display()
