@@ -1,0 +1,14 @@
+# Project Rescue
+
+This project demonstrates a rescue operation for Databricks workspaces.
+
+## Verification Step Output
+
+```
+ Token: dapiee2846... 
+ Host: dbc-0a3b1551-406b.cloud.databricks.com 
+ Path: /sql/1.0/warehouses/13d427578c835b2b 
+         6      Sixth {        67       true}                <nil>
+         2          2 {         2       true}                <nil>
+         3      Three {         0      false}           3,Three,$3
+```
