@@ -1,0 +1,36 @@
+# Databricks notebook source
+
+
+# COMMAND ----------
+
+from pyspark.sql.types import StructType, StructField, IntegerType, StringType
+
+custom_schema = StructType([
+    StructField("id", IntegerType(), True),      # id column is INT, nullable
+    StructField("name", StringType(), True),    # name column is STRING, nullable
+    StructField("quantity", IntegerType(), True),# quantity column is INT, nullable
+    StructField("_rescued_data", StringType(), True), # rescue
+])
+
+df = spark \
+.read \
+    .format("csv") \
+    .option("header", "true") \
+    .option("mode", "PERMISSIVE") \
+    .option("columnNameOfCorruptRecord", "_rescued_data") \
+    .schema(custom_schema) \
+    .load("/Volumes/dz/dz/dz-vol-rescue")
+
+df.display()
+
+df.write.mode("overwrite").option("mergeSchema", "true").saveAsTable("dz.dz.data_rescue")
+
+df = spark.table("dz.dz.data_rescue")
+df.display()
+
+
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * from dz.dz.data_rescue;
