@@ -19,7 +19,7 @@ func main() {
 	path := os.Getenv("DATABRICKS_HTTP_PATH")
 
 	dsn := fmt.Sprintf("token:%s@%s:443%s", token, host, path)
-	fmt.Printf(" Token: %v \n Host: %v \n Path: %v \n dsn: %v \n", token, host, path, dsn)
+	fmt.Printf(" Token: %v... \n Host: %v \n Path: %v \n", token[0:10], host, path)
 
 	db, err := sql.Open("databricks", dsn)
 	if err != nil {
