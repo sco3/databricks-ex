@@ -1,4 +1,4 @@
-module sco3/verify-go/v2
+module sco3/go-verify/v2
 
 go 1.23.2
 
