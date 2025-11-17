@@ -49,10 +49,9 @@ custom_schema = StructType([
  # sample from demo
 df = spark \
     .read \
-    .format("csv") \
     .option("header", "true") \
     .option("rescuedDataColumn", "_rescued_data") \
     .schema(custom_schema) \
-    .load("/Volumes/dz/dz/dz-vol-rescue")
+    .csv("/Volumes/dz/dz/dz-vol-rescue")
 
 df.display()
