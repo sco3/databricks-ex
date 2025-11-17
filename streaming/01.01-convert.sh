@@ -1,0 +1,1 @@
+duckdb -c "COPY (SELECT * FROM 'data.csv') TO 'data.parquet' (FORMAT parquet);"
