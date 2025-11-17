@@ -1,0 +1,24 @@
+-- Databricks notebook source
+select *, _metadata.file_path, _metadata.file_modification_time, current_timestamp from read_files('/Volumes/dz/dz/dz-vol-streaming/')
+
+-- COMMAND ----------
+
+delete from dz.dz.data_streaming;
+
+-- COMMAND ----------
+
+select * from dz.dz.data_streaming;
+
+-- COMMAND ----------
+
+-- MAGIC %python
+-- MAGIC from pyspark.sql.functions import col
+-- MAGIC
+-- MAGIC df = (spark.read.format("parquet").load("/Volumes/dz/dz/dz-vol-streaming/"))
+-- MAGIC display(df)
+-- MAGIC
+-- MAGIC df_metadata = (df.withColumn("path", col("_metadata.file_path")))
+-- MAGIC display (df_metadata)
+
+-- COMMAND ----------
+
