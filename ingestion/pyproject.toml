@@ -1,0 +1,25 @@
+[project]
+name = "ingestion"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "databricks-sql-connector>=3.0.1",
+    "databricks-sdk>=0.73.0",        # optional, for workspace/job APIs
+    "databricks-api>=0.9.0",         # optional, if you prefer REST wrapper
+    "numpy<2",
+    "pandas>=2.3.3",
+    "python-dotenv>=1.2.1",
+]
+
+[tool.basedpyright]
+typeCheckingMode = "strict"
+ignore = ["**/__pycache__"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.5",
+    "black>=25.11.0",
+    "isort>=7.0.0",
+]
