@@ -64,3 +64,18 @@ spark.sql ('''
 
            
 ''').display()
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * 
+# MAGIC from read_files (
+# MAGIC   '/Volumes/dz/dz/dz-vol-rescue',
+# MAGIC   format=>'csv',
+# MAGIC   sep=>',',
+# MAGIC   header=>true,
+# MAGIC   schema=>' id INT,   name STRING,   quantity BIGINT  ',
+# MAGIC   rescueddatacolumn=>'_rescued_data'
+# MAGIC   
+# MAGIC );
+# MAGIC
