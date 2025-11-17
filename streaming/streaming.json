@@ -1,20 +1,17 @@
 {
-  "name":"streaming",
-  "spec": {
-    "catalog":"dz",
-    "continuous":true,
-    "development":true,
-    "libraries": [
-      {
-        "glob": {
-          "include":"/Workspace/Users/texter.texel@gmail.com/streaming/streaming.sql"
-        }
+  "name": "streaming",
+  "catalog": "dz",
+  "continuous": true,
+  "development": true,
+  "libraries": [
+    {
+      "glob": {
+        "include": "/Workspace/Users/texter.texel@gmail.com/streaming/streaming.sql"
       }
-    ],
-    "name":"streaming",
-    "photon":true,
-    "root_path":"/Workspace/Users/texter.texel@gmail.com/streaming",
-    "schema":"dz",
-    "serverless":true
-  }
+    }
+  ],
+  "photon": true,
+  "root_path": "/Workspace/Users/texter.texel@gmail.com/streaming",
+  "schema": "dz",
+  "serverless": true
 }
