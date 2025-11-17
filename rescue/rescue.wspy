@@ -17,7 +17,7 @@ df = spark \
     .format("csv") \
     .option("header", "true") \
     .option("mode", "PERMISSIVE") \
-    .option("columnNameOfCorruptRecord", "_rescued_data") \ # "rescuedDataColumn" should work as well
+    .option("columnNameOfCorruptRecord", "_rescued_data") \
     .schema(custom_schema) \
     .load("/Volumes/dz/dz/dz-vol-rescue")
 
@@ -34,3 +34,25 @@ df.display()
 
 # MAGIC %sql
 # MAGIC select * from dz.dz.data_rescue;
+
+# COMMAND ----------
+
+from pyspark.sql.types import StructType, StructField, IntegerType, StringType
+
+custom_schema = StructType([
+    StructField("id", IntegerType(), True),      # id column is INT, nullable
+    StructField("name", StringType(), True),    # name column is STRING, nullable
+    StructField("quantity", IntegerType(), True),# quantity column is INT, nullable
+    StructField("_rescued_data", StringType(), True), # rescue
+])
+
+ # sample from demo
+df = spark \
+    .read \
+    .format("csv") \
+    .option("header", "true") \
+    .option("rescuedDataColumn", "_rescued_data") \
+    .schema(custom_schema) \
+    .load("/Volumes/dz/dz/dz-vol-rescue")
+
+df.display()
