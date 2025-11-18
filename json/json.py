@@ -171,3 +171,41 @@ from
 
 # COMMAND ----------
 
+# MAGIC %sql
+# MAGIC select
+# MAGIC     decoded_value,
+# MAGIC     from_json(decoded_value, 'STRUCT<customer: STRUCT<id: BIGINT, name: STRING, vip: BOOLEAN>, discount: DOUBLE, items: ARRAY<STRUCT<price: BIGINT, product: STRING, qty: BIGINT>>, order_id: BIGINT, shipping: STRUCT<address: STRING, method: STRING>, tags: ARRAY<STRING>>') as parsed_value
+# MAGIC from
+# MAGIC     dz.dz.data_json_bronze_decoded
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select
+# MAGIC     decoded_value,
+# MAGIC     from_json(decoded_value, 'STRUCT<customer: STRUCT<id: BIGINT, name: STRING, vip: BOOLEAN>, discount: DOUBLE, items: ARRAY<STRUCT<price: BIGINT, product: STRING, qty: BIGINT>>, order_id: BIGINT, shipping: STRUCT<address: STRING, method: STRING>, tags: ARRAY<STRING>>') as parsed_value
+# MAGIC from
+# MAGIC     dz.dz.data_json_bronze_decoded
+# MAGIC where
+# MAGIC     from_json(decoded_value, 'STRUCT<customer: STRUCT<id: BIGINT, name: STRING, vip: BOOLEAN>, discount: DOUBLE, items: ARRAY<STRUCT<price: BIGINT, product: STRING, qty: BIGINT>>, order_id: BIGINT, shipping: STRUCT<address: STRING, method: STRING>, tags: ARRAY<STRING>>') is null
+# MAGIC ;
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select
+# MAGIC     decoded_value,
+# MAGIC     from_json(decoded_value, 'STRUCT<customer: STRUCT<id: BIGINT, name: STRING, vip: BOOLEAN>, discount: DOUBLE, items: ARRAY<STRUCT<price: BIGINT, product: STRING, qty: BIGINT>>, order_id: BIGINT, shipping: STRUCT<address: STRING, method: STRING>, tags: ARRAY<STRING>>') as parsed_value
+# MAGIC from
+# MAGIC     dz.dz.data_json_bronze_decoded;
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC create or replace table dz.dz.data_json_bronze_decoded 
+# MAGIC as 
+# MAGIC select
+# MAGIC     decoded_value,
+# MAGIC     from_json(decoded_value, 'STRUCT<customer: STRUCT<id: BIGINT, name: STRING, vip: BOOLEAN>, discount: DOUBLE, items: ARRAY<STRUCT<price: BIGINT, product: STRING, qty: BIGINT>>, order_id: BIGINT, shipping: STRUCT<address: STRING, method: STRING>, tags: ARRAY<STRING>>') as parsed_value
+# MAGIC from
+# MAGIC     dz.dz.data_json_bronze_decoded;
