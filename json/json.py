@@ -44,3 +44,17 @@ df = spark.table("dz.dz.data_json_bronze").select(
     )
 df.show()
 df.display()
+
+# COMMAND ----------
+
+from pyspark.sql.functions import col,unbase64
+
+df = spark.table("dz.dz.data_json_bronze").select(
+    col("key"),
+    unbase64("key").alias("decoded_key"),
+    col("value"),
+    unbase64("value" ).alias("decoded_value"),
+    )
+    
+df.show()
+df.display()
