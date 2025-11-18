@@ -217,3 +217,13 @@ from
 # COMMAND ----------
 
 spark.table("dz.dz.data_json_bronze_decoded_struct").display()
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC
+# MAGIC select 
+# MAGIC parsed_value.customer.name,
+# MAGIC parsed_value.tags,
+# MAGIC array_size(parsed_value.tags) tags_size
+# MAGIC from dz.dz.data_json_bronze_decoded_struct
