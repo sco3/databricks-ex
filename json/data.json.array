@@ -1,0 +1,26 @@
+[
+  {
+    "topic": "orders.raw",
+    "partition": 0,
+    "offset": 1234,
+    "timestamp": 1731830400000,
+    "key": "b3JkZXJfMTAwMQ==", 
+    "value": "eyJvcmRlcl9pZCI6IDEwMDEsICJpdGVtIjogIkxhcHRvcCIsICJwcmljZSI6IDEyMDAuMDB9"
+  },
+  {
+    "topic": "orders.raw",
+    "partition": 0,
+    "offset": 1235,
+    "timestamp": 1731830460000,
+    "key": "b3JkZXJfMTAwMg==",
+    "value": "eyJvcmRlcl9pZCI6IDEwMDIsICJpdGVtIjogIk1vbml0b3IiLCAicHJpY2UiOiAzMDAuNTB9"
+  },
+  {
+    "topic": "orders.raw",
+    "partition": 0,
+    "offset": 1236,
+    "timestamp": 1731830520000,
+    "key": "b3JkZXJfMTAwMw==",
+    "value": "eyJvcmRlcl9pZCI6IDEwMDMsICJpdGVtIjogIk1vdXNlIiwgInByaWNlIjogMjUuMDB9"
+  }
+]

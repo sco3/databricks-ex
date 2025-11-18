@@ -1,0 +1,8 @@
+{
+  "topic": "orders.raw",
+  "partition": 0,
+  "offset": 1234,
+  "timestamp": 1731830400000,
+  "key": "b3JkZXJfMTAwMQ==",
+  "value": "eyJvcmRlcl9pZCI6IDEwMDEsICJpdGVtIjogIkxhcHRvcCIsICJwcmljZSI6IDEyMDAuMDB9"
+}
