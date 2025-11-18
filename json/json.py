@@ -26,3 +26,9 @@ df = spark.read.text("/Volumes/dz/dz/dz-vol-json")
 
 df_with_path = df.select("*", col("_metadata.file_path").alias("source_path"))
 df_with_path.display()
+
+
+# COMMAND ----------
+
+df = spark.read.json("/Volumes/dz/dz/dz-vol-json")
+df.write.saveAsTable("dz.dz.data_json_bronze", mode="overwrite")
