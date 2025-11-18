@@ -75,14 +75,27 @@ df.display()
 
 # COMMAND ----------
 
-from pyspark.sql.functions import col,unbase64
+# MAGIC %sql
+# MAGIC explain extended table dz.dz.data_json_bronze
 
-df = spark.table("dz.dz.data_json_bronze").select(
-    col("key"),
+# COMMAND ----------
+
+from pyspark.sql.functions import col,unbase64
+bronze_table = "dz.dz.data_json_bronze"
+decoded_table = f"{bronze_table}_decoded"
+
+df = spark.table(bronze_table).select(
+    
     unbase64("key").cast("string").alias("decoded_key"),
-    col("value"),
+    col("offset"),
+    col("timestamp"),
+    col("topic"),
+    col("partition"),
     unbase64("value" ).cast("string").alias("decoded_value"),
     )
     
-df.show()
-df.display()
+
+
+df.write.saveAsTable(decoded_table, mode="overwrite")
+
+spark.table(decoded_table).display()
