@@ -227,3 +227,21 @@ spark.table("dz.dz.data_json_bronze_decoded_struct").display()
 # MAGIC parsed_value.tags,
 # MAGIC array_size(parsed_value.tags) tags_size
 # MAGIC from dz.dz.data_json_bronze_decoded_struct
+
+# COMMAND ----------
+
+_sqldf.show()
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC
+# MAGIC select 
+# MAGIC parsed_value.customer.name,
+# MAGIC explode(parsed_value.tags),
+# MAGIC array_size(parsed_value.tags) tags_size
+# MAGIC from dz.dz.data_json_bronze_decoded_struct
+
+# COMMAND ----------
+
+_sqldf.show()
