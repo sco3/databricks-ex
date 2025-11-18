@@ -135,3 +135,39 @@ from
 
 # COMMAND ----------
 
+# MAGIC %sql
+# MAGIC select schema_of_json ('
+# MAGIC {
+# MAGIC   "order_id": 2001,
+# MAGIC   "customer": {
+# MAGIC     "id": 101,
+# MAGIC     "name": "Alice",
+# MAGIC     "vip": true
+# MAGIC   },
+# MAGIC   "items": [
+# MAGIC     {
+# MAGIC       "product": "Laptop",
+# MAGIC       "price": 1200,
+# MAGIC       "qty": 1
+# MAGIC     },
+# MAGIC     {
+# MAGIC       "product": "Mouse",
+# MAGIC       "price": 25,
+# MAGIC       "qty": 2
+# MAGIC     }
+# MAGIC   ],
+# MAGIC   "discount": 0.1,
+# MAGIC   "tags": [
+# MAGIC     "electronics",
+# MAGIC     "bundle"
+# MAGIC   ],
+# MAGIC   "shipping": {
+# MAGIC     "method": "express",
+# MAGIC     "address": "123 Main St"
+# MAGIC   }
+# MAGIC }
+# MAGIC
+# MAGIC ') schema
+
+# COMMAND ----------
+

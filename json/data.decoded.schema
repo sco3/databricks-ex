@@ -1,0 +1,1 @@
+STRUCT<customer: STRUCT<id: BIGINT, name: STRING, vip: BOOLEAN>, discount: DOUBLE, items: ARRAY<STRUCT<price: BIGINT, product: STRING, qty: BIGINT>>, order_id: BIGINT, shipping: STRUCT<address: STRING, method: STRING>, tags: ARRAY<STRING>>
