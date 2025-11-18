@@ -34,3 +34,13 @@ df = spark.read.json("/Volumes/dz/dz/dz-vol-json")
 df.write.saveAsTable("dz.dz.data_json_bronze", mode="overwrite")
 
 spark.table("dz.dz.data_json_bronze").display()
+
+# COMMAND ----------
+
+from pyspark.sql.functions import col,unbase64
+df = spark.table("dz.dz.data_json_bronze").select(
+    col("key"),
+    unbase64("key").alias("decoded_key"),
+    )
+df.show()
+df.display()
