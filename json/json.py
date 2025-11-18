@@ -32,3 +32,5 @@ df_with_path.display()
 
 df = spark.read.json("/Volumes/dz/dz/dz-vol-json")
 df.write.saveAsTable("dz.dz.data_json_bronze", mode="overwrite")
+
+spark.table("dz.dz.data_json_bronze").display()
