@@ -202,10 +202,18 @@ from
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC create or replace table dz.dz.data_json_bronze_decoded 
+# MAGIC
+# MAGIC drop table if exists dz.dz.data_json_bronze_decoded_struct ;
+# MAGIC create or replace table dz.dz.data_json_bronze_decoded_struct 
 # MAGIC as 
 # MAGIC select
-# MAGIC     decoded_value,
+# MAGIC     * except (decoded_value),
 # MAGIC     from_json(decoded_value, 'STRUCT<customer: STRUCT<id: BIGINT, name: STRING, vip: BOOLEAN>, discount: DOUBLE, items: ARRAY<STRUCT<price: BIGINT, product: STRING, qty: BIGINT>>, order_id: BIGINT, shipping: STRUCT<address: STRING, method: STRING>, tags: ARRAY<STRING>>') as parsed_value
 # MAGIC from
 # MAGIC     dz.dz.data_json_bronze_decoded;
+# MAGIC
+# MAGIC
+
+# COMMAND ----------
+
+spark.table("dz.dz.data_json_bronze_decoded_struct").display()
