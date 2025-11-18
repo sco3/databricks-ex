@@ -99,3 +99,39 @@ df = spark.table(bronze_table).select(
 df.write.saveAsTable(decoded_table, mode="overwrite")
 
 spark.table(decoded_table).display()
+
+# COMMAND ----------
+
+
+from pyspark.sql.functions import col,unbase64,get_json_object
+bronze_table = "dz.dz.data_json_bronze"
+decoded_table = f"{bronze_table}_decoded"
+
+
+df=spark.table(decoded_table).select (
+    get_json_object(col("decoded_value"), "$.order_id").alias("order_id"),
+    get_json_object(col("decoded_value"), "$.customer.name").alias("customer_name"),
+
+).display()
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select 
+# MAGIC     decoded_value:order_id,
+# MAGIC     decoded_value:customer:name
+# MAGIC from
+# MAGIC     dz.dz.data_json_bronze_decoded
+
+# COMMAND ----------
+
+spark.sql("""
+select 
+    decoded_value:order_id,
+    decoded_value:customer:name
+from
+    dz.dz.data_json_bronze_decoded
+""").display()
+
+# COMMAND ----------
+

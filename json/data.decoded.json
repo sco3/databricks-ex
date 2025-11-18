@@ -1,0 +1,29 @@
+{
+  "order_id": 2001,
+  "customer": {
+    "id": 101,
+    "name": "Alice",
+    "vip": true
+  },
+  "items": [
+    {
+      "product": "Laptop",
+      "price": 1200,
+      "qty": 1
+    },
+    {
+      "product": "Mouse",
+      "price": 25,
+      "qty": 2
+    }
+  ],
+  "discount": 0.1,
+  "tags": [
+    "electronics",
+    "bundle"
+  ],
+  "shipping": {
+    "method": "express",
+    "address": "123 Main St"
+  }
+}
