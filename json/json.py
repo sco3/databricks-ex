@@ -255,3 +255,17 @@ _sqldf.show()
 # MAGIC explode_outer(parsed_value.tags),
 # MAGIC array_size(parsed_value.tags) tags_size
 # MAGIC from dz.dz.data_json_bronze_decoded_struct
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC create or replace table dz.dz.data_json_variant 
+# MAGIC as
+# MAGIC select
+# MAGIC     * except (decoded_value),
+# MAGIC     parse_json(decoded_value) value_variant
+# MAGIC from
+# MAGIC     dz.dz.data_json_bronze_decoded;
+# MAGIC
+# MAGIC select * from dz.dz.data_json_variant;
+# MAGIC
