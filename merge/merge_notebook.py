@@ -35,3 +35,20 @@ spark.read.table("dz.dz.target_table").display()
 
 # MAGIC %sql
 # MAGIC SELECT * FROM dz.dz.target_table
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC describe history dz.dz.target_table
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * from dz.dz.target_table version as of 0;
+# MAGIC
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * from dz.dz.target_table version as of 1;
+# MAGIC
